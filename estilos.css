@@ -114,8 +114,7 @@ section.campo { padding-top: 12px; }
 .lineas path { fill: none; stroke: var(--accent); stroke-opacity: .6; stroke-width: 4; }
 @media (max-width: 500px) {
   #jugadores { padding-left: 8px; padding-right: 8px; }
-  #jugadores .jugador { flex-basis: 140px; }
-}
+  #jugadores .jugador { flex-basis: 140px; }}
 
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
 .jugador {
@@ -141,7 +140,7 @@ section.campo { padding-top: 12px; }
 }
 #jugadores .jugador { text-align: center; }
 #jugadores .jugador .stats { justify-content: center; }
-.jugador .dorsal { color: var(--accent); font-weight: 800; }
+.jugador .dorsal { color: var(--text); }
 .jugador .mote { font-family: Anton, Impact, sans-serif; font-size: 1.7rem; line-height: 1.1; color: var(--accent); text-transform: uppercase; }
 .jugador .nom { font-weight: 800; margin-top: 8px; }
 .jugador .pos { color: var(--muted); font-size: .8rem; }

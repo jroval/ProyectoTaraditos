@@ -63,7 +63,8 @@ const mvp = Math.max(...D.jugadores.map((j) => j.goles + j.asist));
 const ficha = (j) => `
     <article class="jugador${mvp > 0 && j.goles + j.asist === mvp ? " mvp" : ""}">
       <div class="mote">${esc(j.apodo || j.alias?.[0] || j.nombre)}</div>
-      <div class="pos"><span class="dorsal">${j.dorsal}</span> ${esc(j.nombre)}</div>
+      <div class="mote dorsal">${j.dorsal}</div>
+      <div class="pos">${esc(j.nombre)}</div>
       <div class="stats"><span><b>${j.goles}</b> goles</span><span><b>${j.asist}</b> as.</span><span><b>${n(j.pj)}</b> pj</span></div>
     </article>`;
 if ($("jugadores")) $("jugadores").innerHTML = LINEAS.map(([titulo, pos]) => {
