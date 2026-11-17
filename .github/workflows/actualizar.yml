@@ -1,0 +1,43 @@
+name: Actualizar desde Copa Fácil
+
+on:
+  schedule:
+    # Lunes a las 16:00 y 19:00 UTC (17:00 y 20:00 en España en invierno, 18:00 y 21:00 en verano)
+    - cron: "0 16,19 * * 1"
+  workflow_dispatch: # botón "Run workflow" para lanzarlo a mano
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Descargar datos de Copa Fácil
+        run: python scripts/actualizar.py
+
+      - name: Guardar y publicar si hay cambios
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet; then
+            echo "Nada nuevo"
+            # Al lanzarlo a mano, republica igualmente (sirve para probar que funciona)
+            if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+              gh api -X POST "repos/${{ github.repository }}/pages/builds"
+            fi
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Actualizar clasificación y resultados desde Copa Fácil"
+          git push
+          # Los push hechos con el token de la Action no lanzan GitHub Pages solos
+          gh api -X POST "repos/${{ github.repository }}/pages/builds"

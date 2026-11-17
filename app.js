@@ -1,4 +1,10 @@
 const D = window.DATOS;
+const L = window.LIGA;
+// Calendario, resultados y clasificación vienen de Copa Fácil (liga.js);
+// goles y ausentes de cada partido, de datos.js
+D.clasificacion = L.clasificacion;
+D.actualizado = L.actualizado;
+D.partidos = L.partidos.map((p) => ({ ...p, ...(D.partidos[p.local + " - " + p.visitante] || {}) }));
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const n = (v) => (v == null ? "–" : v);
