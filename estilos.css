@@ -40,6 +40,15 @@ a { color: var(--accent); }
   -webkit-mask-image: linear-gradient(to bottom, #000 calc(min(50vw, 100%) * .55), transparent min(50vw, 100%));
           mask-image: linear-gradient(to bottom, #000 calc(min(50vw, 100%) * .55), transparent min(50vw, 100%));
 }
+@media (min-width: 601px) {
+  /* En pantalla ancha: la foto toma la altura de la cabecera (sale el grupo entero), a la derecha y difuminada hacia el escudo */
+  .hero::before {
+    left: auto; aspect-ratio: 2 / 1; max-width: 100%;
+    background-position: center; background-size: cover;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 35%);
+            mask-image: linear-gradient(to right, transparent, #000 35%);
+  }
+}
 .hero > .wrap { position: relative; }
 .hero-grid { display: flex; align-items: center; gap: 32px; }
 .escudo { width: clamp(110px, 22vw, 200px); height: auto; flex-shrink: 0; filter: drop-shadow(0 10px 30px rgba(0,0,0,.5)); }
