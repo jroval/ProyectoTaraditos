@@ -50,22 +50,19 @@ a { color: var(--accent); }
   }
 }
 @media (max-width: 600px) {
-  /* En móvil: la foto empieza a la derecha del escudo para que no tape a nadie */
+  /* En móvil: cabecera baja, escudo pequeño al lado del título y la foto llenando el resto a la derecha */
+  .hero { padding: 20px 0; }
   .hero::before {
-    left: auto; bottom: auto; width: calc(100% - 120px); aspect-ratio: 2 / 1;
-    background-position: center; background-size: cover;
-    -webkit-mask-image: linear-gradient(to right, transparent, #000 20%), linear-gradient(to bottom, #000 65%, transparent);
-    -webkit-mask-composite: source-in;
-            mask-image: linear-gradient(to right, transparent, #000 20%), linear-gradient(to bottom, #000 65%, transparent);
-            mask-composite: intersect;
+    left: 76px; background-position: center 30%; background-size: cover;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 25%);
+            mask-image: linear-gradient(to right, transparent, #000 25%);
   }
+  .hero-grid { gap: 14px; }
+  .resumen { margin-top: 16px; }
 }
 .hero > .wrap { position: relative; }
 .hero-grid { display: flex; align-items: center; gap: 32px; }
 .escudo { width: clamp(110px, 22vw, 200px); height: auto; flex-shrink: 0; filter: drop-shadow(0 10px 30px rgba(0,0,0,.5)); }
-@media (max-width: 600px) {
-  .hero-grid { flex-direction: column; align-items: flex-start; gap: 20px; }
-}
 .liga { margin: 0; color: var(--accent); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; font-size: .85rem; }
 h1 {
   font-family: Anton, Impact, sans-serif;
@@ -76,6 +73,10 @@ h1 {
   text-transform: uppercase;
 }
 .resumen { display: flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 600px) {
+  .escudo { width: 72px; }
+  h1 { font-size: clamp(2rem, 10vw, 2.8rem); margin-bottom: 0; }
+}
 .dato { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px 16px; min-width: 90px; }
 .dato b { display: block; font-size: 1.6rem; font-weight: 800; }
 .dato span { color: var(--muted); font-size: .8rem; }
