@@ -33,10 +33,12 @@ a { color: var(--accent); }
 .hero { position: relative; overflow: hidden; }
 .hero::before {
   content: ""; position: absolute; inset: 0;
-  background: url("foto-equipo.jpg") center 30% / cover no-repeat;
+  /* Siempre a lo ancho y pegada arriba: no se cortan ni laterales ni cabezas */
+  background: url("foto-equipo.jpg") center top / 100% auto no-repeat;
   opacity: .2;
-  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
-          mask-image: linear-gradient(to bottom, #000 55%, transparent);
+  /* La foto mide la mitad de alto que de ancho (50vw): se difumina antes de acabar */
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(min(50vw, 100%) * .55), transparent min(50vw, 100%));
+          mask-image: linear-gradient(to bottom, #000 calc(min(50vw, 100%) * .55), transparent min(50vw, 100%));
 }
 .hero > .wrap { position: relative; }
 .hero-grid { display: flex; align-items: center; gap: 32px; }
