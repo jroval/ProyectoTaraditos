@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plantilla · Proyecto Taraditos</title>
+  <link rel="icon" href="escudo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <a href="index.html"><img class="escudo" src="escudo.png" alt="Escudo de Proyecto Taraditos"></a>
+      <div>
+        <p class="liga" id="liga"></p>
+        <h1 id="equipo"></h1>
+        <div class="resumen" id="resumen"></div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs wrap">
+    <a href="index.html">Plantilla</a>
+    <a href="clasificacion.html">Clasificación</a>
+    <a href="goleadores.html">Goleadores</a>
+    <a href="partidos.html">Partidos</a>
+  </nav>
+
+  <main class="wrap">
+    <section class="campo">
+      <div id="jugadores"></div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <span id="actualizado"></span> · <a id="liga-link" target="_blank" rel="noopener">Ver la liga en Copa Fácil</a>
+  </footer>
+
+  <script src="datos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
