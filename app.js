@@ -52,8 +52,8 @@ for (const p of jugados) {
   gf += a; gc += b;
   a > b ? v++ : a === b ? e++ : d++;
 }
-$("resumen").innerHTML = [
-  [jugados.length, "Jugados"], [v, "Ganados"], [e, "Empatados"], [d, "Perdidos"], [gf + ":" + gc, "Goles"]
+if ($("resumen")) $("resumen").innerHTML = [
+  [v * 3 + e, "Puntos"], [jugados.length, "Jugados"], [v, "Ganados"], [e, "Empatados"], [d, "Perdidos"], [gf + ":" + gc, "Goles"]
 ].map(([n, t]) => `<div class="dato"><b>${n}</b><span>${t}</span></div>`).join("");
 
 // Plantilla

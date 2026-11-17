@@ -48,6 +48,8 @@ h1 {
 .dato { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px 16px; min-width: 90px; }
 .dato b { display: block; font-size: 1.6rem; font-weight: 800; }
 .dato span { color: var(--muted); font-size: .8rem; }
+.dato:first-child { border-color: var(--accent); }
+.dato:first-child b { color: var(--accent); }
 
 .tabs {
   position: sticky; top: 0; z-index: 5;
