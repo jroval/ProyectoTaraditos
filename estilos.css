@@ -89,6 +89,8 @@ section.campo { padding-top: 12px; }
   padding: 16px; position: relative; overflow: hidden;
 }
 .jugador .num { font-family: Anton, Impact, sans-serif; font-size: 3rem; line-height: 1; color: var(--accent); }
+/* Si las fichas se parten en varias filas (móvil), deja sitio encima del MVP */
+#jugadores .grid:has(.mvp) { row-gap: 38px; }
 .jugador.mvp {
   overflow: visible;
   border-color: var(--accent);
