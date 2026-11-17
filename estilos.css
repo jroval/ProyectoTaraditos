@@ -139,6 +139,9 @@ section.campo { padding-top: 12px; }
   -webkit-text-stroke: 1px #ff4a4a;
   text-shadow: 0 0 8px rgba(255,40,40,.9), 0 0 22px rgba(255,20,20,.6);
 }
+#jugadores .jugador { text-align: center; }
+#jugadores .jugador .stats { justify-content: center; }
+.jugador .dorsal { color: var(--accent); font-weight: 800; }
 .jugador .mote { font-family: Anton, Impact, sans-serif; font-size: 1.7rem; line-height: 1.1; color: var(--accent); text-transform: uppercase; }
 .jugador .nom { font-weight: 800; margin-top: 8px; }
 .jugador .pos { color: var(--muted); font-size: .8rem; }
