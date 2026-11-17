@@ -123,6 +123,10 @@ if ($("tabla")) $("tabla").innerHTML = [...D.jugadores]
     <tr><td>${i + 1}</td><td>${esc(j.nombre)}</td><td>${n(j.pj)}</td>
     <td class="goles">${j.goles}</td><td>${j.asist}</td><td>${j.amarillas}</td><td>${j.rojas}</td></tr>`).join("");
 
+const BALON = `<svg class="balon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/>
+  <polygon points="12,8 15.8,10.76 14.35,15.24 9.65,15.24 8.2,10.76"/>
+  <path d="M12 8V2M15.8 10.76L21.5 8.9M14.35 15.24L17.9 20.1M9.65 15.24L6.1 20.1M8.2 10.76L2.5 8.9"/></svg>`;
+
 // Partidos (del primero al último)
 if ($("lista-partidos")) $("lista-partidos").innerHTML = [...D.partidos]
   .sort((a, b) => a.fecha.localeCompare(b.fecha))
@@ -143,6 +147,6 @@ if ($("lista-partidos")) $("lista-partidos").innerHTML = [...D.partidos]
         ${eq(p.visitante)}
         <div class="info">Jornada ${i + 1} · ${fecha} · ${p.hora} · ${esc(p.campo)}</div>
         ${p.goles ? `<ul class="goles-partido">${p.goles.map(([g, a]) =>
-          `<li>⚽ <b>${esc(g)}</b>${a ? ` <span>(${esc(a)})</span>` : ""}</li>`).join("")}</ul>` : ""}
+          `<li>${BALON}<b>${esc(g)}</b>${a ? ` <span>(${esc(a)})</span>` : ""}</li>`).join("")}</ul>` : ""}
       </div>`;
   }).join("");
