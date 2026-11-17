@@ -17,7 +17,7 @@ window.DATOS = {
     { dorsal: 8,  nombre: "Anxo Fernández",            apodo: "",       alias: ["Anxo"],                  pos: "MED", amarillas: 1, rojas: 0 },
     { dorsal: 29, nombre: "Asis Cobos",                apodo: "",       alias: ["Asis", "Asís", "Cobos"], pos: "MED", amarillas: 0, rojas: 0 },
     { dorsal: 2,  nombre: "Juan Carlos Santos",        apodo: "JC",     alias: ["JC", "Santos"],          pos: "MED", amarillas: 0, rojas: 0 },
-    { dorsal: 9,  nombre: "César Sáenz de Santamaría", apodo: "",       alias: ["César", "Cesar"],        pos: "DEL", amarillas: 0, rojas: 0 },
+    { dorsal: 9,  nombre: "César Sáenz de Santamaría", apodo: "",       alias: ["César", "Cesar"],        pos: "DEF", amarillas: 0, rojas: 0 },
     { dorsal: 7,  nombre: "Raúl Leita",                apodo: "",       alias: ["Raúl", "Raul"],          pos: "DEL", amarillas: 0, rojas: 0 },
     { dorsal: 10, nombre: "Daniel Boal",               apodo: "Veneno", alias: ["Veneno", "Boal"],        pos: "DEL", amarillas: 0, rojas: 0 },
     { dorsal: 36, nombre: "Jaime Robles",              apodo: "",       alias: ["Robles"],                pos: "DEL", amarillas: 0, rojas: 0 }
