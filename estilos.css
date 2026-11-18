@@ -6,9 +6,9 @@
   --muted: #929ab0;
   --accent: #e2b552;
   --red: #d8101c;
-  --win: #3ddc84;
-  --draw: #f5c542;
-  --loss: #ff5d5d;
+  --win: #3fd0e0;
+  --draw: #e2b552;
+  --loss: #ff4a4a;
 }
 
 * { box-sizing: border-box; }
