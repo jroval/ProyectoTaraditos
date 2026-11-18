@@ -29,7 +29,7 @@ window.DATOS = {
   // valoraciones: crack (+3 al MVP), dandy (+2), vayaDia y duro (no suman); vacío = aún sin votar
   partidos: {
     "Proyecto Taraditos - RCF Valde": {
-      valoraciones: { crack: "", dandy: "", vayaDia: "", duro: "" },
+      valoraciones: { crack: "Asis", dandy: "César", vayaDia: "JC", duro: "Veneno" },
       ausentes: ["Raúl", "Robles", "Pollo"],
       goles: [
         ["César", "Asis"], ["Veneno", "Asis"], ["JC", "Asis"], ["Miranda", "Asis"],
@@ -38,7 +38,7 @@ window.DATOS = {
       ]
     },
     "La Pardineta - Proyecto Taraditos": {
-      valoraciones: { crack: "", dandy: "", vayaDia: "", duro: "" },
+      valoraciones: { crack: "JC", dandy: "Coco", vayaDia: "Melero", duro: "Anxo" },
       ausentes: ["Raúl", "Robles", "Pollo", "César"],
       goles: [
         ["Asis", "JC"], ["Asis", "JC"], ["JC", "Asis"], ["JC", "Asis"],
