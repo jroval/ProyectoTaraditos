@@ -30,7 +30,7 @@ for (const p of D.partidos) for (const [g, a] of p.goles || []) {
   if (a) { if (porAlias[norm(a)]) porAlias[norm(a)].asist++; else console.warn("Asistente sin identificar:", a); }
 }
 // Valoraciones de cada partido: el crack suma 3 al MVP y el dandy 2
-const VALORACIONES = [["crack", "El Crack", 3], ["dandy", "El Dandy", 2], ["vayaDia", "Vaya Día", 0], ["duro", "El Duro", 0]];
+const VALORACIONES = [["crack", "El Crack", 3], ["dandy", "El Dandy", 2], ["duro", "El Duro", 0], ["vayaDia", "Vaya Día", 0]];
 for (const j of D.jugadores) j.puntos = j.goles + j.asist;
 for (const p of D.partidos) for (const [k, , pts] of VALORACIONES) {
   const nom = p.valoraciones?.[k];
