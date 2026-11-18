@@ -29,6 +29,14 @@ for (const p of D.partidos) for (const [g, a] of p.goles || []) {
   if (porAlias[norm(g)]) porAlias[norm(g)].goles++; else console.warn("Goleador sin identificar:", g);
   if (a) { if (porAlias[norm(a)]) porAlias[norm(a)].asist++; else console.warn("Asistente sin identificar:", a); }
 }
+// Valoraciones de cada partido: el crack suma 3 al MVP y el dandy 2
+const VALORACIONES = [["crack", "El Crack", 3], ["dandy", "El Dandy", 2], ["vayaDia", "Vaya Día", 0], ["duro", "El Duro", 0]];
+for (const j of D.jugadores) j.puntos = j.goles + j.asist;
+for (const p of D.partidos) for (const [k, , pts] of VALORACIONES) {
+  const nom = p.valoraciones?.[k];
+  if (!nom) continue;
+  if (porAlias[norm(nom)]) porAlias[norm(nom)].puntos += pts; else console.warn("Valoración sin identificar:", nom);
+}
 const POS ={ POR: "Portero", DEF: "Defensa", MED: "Medio", DEL: "Delantero" };
 
 // Cabecera
@@ -58,10 +66,10 @@ if ($("resumen")) $("resumen").innerHTML = [
 
 // Plantilla
 const LINEAS = [["Portero", ["POR"]], ["Defensas", ["DEF"]], ["Medios", ["MED"]], ["Delanteros", ["DEL"]]];
-// MVP: quien más goles + asistencias lleva (si hay empate, todos)
-const mvp = Math.max(...D.jugadores.map((j) => j.goles + j.asist));
+// MVP: quien más puntos lleva = goles + asistencias + 3 por crack + 2 por dandy (si hay empate, todos)
+const mvp = Math.max(...D.jugadores.map((j) => j.puntos));
 const ficha = (j) => `
-    <article class="jugador${mvp > 0 && j.goles + j.asist === mvp ? " mvp" : ""}">
+    <article class="jugador${mvp > 0 && j.puntos === mvp ? " mvp" : ""}">
       <div class="mote">${esc(j.apodo || j.alias?.[0] || j.nombre)}</div>
       <div class="mote dorsal">${j.dorsal}</div>
       <div class="pos">${esc(j.nombre)}</div>
@@ -149,5 +157,7 @@ if ($("lista-partidos")) $("lista-partidos").innerHTML = [...D.partidos]
         <div class="info">Jornada ${i + 1} · ${fecha} · ${p.hora} · ${esc(p.campo)}</div>
         ${p.goles ? `<ul class="goles-partido">${p.goles.map(([g, a]) =>
           `<li>${BALON}<b>${esc(g)}</b>${a ? ` <span>(${esc(a)})</span>` : ""}</li>`).join("")}</ul>` : ""}
+        ${jugado ? `<div class="valoraciones">${VALORACIONES.map(([k, t]) =>
+          `<div><span>${t}</span><b>${esc(p.valoraciones?.[k] || "–")}</b></div>`).join("")}</div>` : ""}
       </div>`;
   }).join("");

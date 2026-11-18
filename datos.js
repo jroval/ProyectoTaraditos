@@ -26,8 +26,10 @@ window.DATOS = {
   // Lo que apuntamos nosotros de cada partido (el calendario y los resultados vienen solos de Copa Fácil, en liga.js)
   // Clave: "Local - Visitante", tal como sale en la web
   // goles: [goleador, asistente] (asistente puede ir vacío) · ausentes: quién no jugó (apodo o alias)
+  // valoraciones: crack (+3 al MVP), dandy (+2), vayaDia y duro (no suman); vacío = aún sin votar
   partidos: {
     "Proyecto Taraditos - RCF Valde": {
+      valoraciones: { crack: "", dandy: "", vayaDia: "", duro: "" },
       ausentes: ["Raúl", "Robles", "Pollo"],
       goles: [
         ["César", "Asis"], ["Veneno", "Asis"], ["JC", "Asis"], ["Miranda", "Asis"],
@@ -36,6 +38,7 @@ window.DATOS = {
       ]
     },
     "La Pardineta - Proyecto Taraditos": {
+      valoraciones: { crack: "", dandy: "", vayaDia: "", duro: "" },
       ausentes: ["Raúl", "Robles", "Pollo", "César"],
       goles: [
         ["Asis", "JC"], ["Asis", "JC"], ["JC", "Asis"], ["JC", "Asis"],

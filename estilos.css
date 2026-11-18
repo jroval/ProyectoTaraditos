@@ -181,6 +181,14 @@ tr.nuestro .eq-nom { color: var(--accent); }
 .balon { width: 16px; height: 16px; flex-shrink: 0; fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linejoin: round; }
 .balon polygon { fill: var(--accent); }
 
+.valoraciones {
+  grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+  padding-top: 10px; border-top: 1px solid var(--line); text-align: center;
+}
+.valoraciones span { display: block; color: var(--muted); font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.valoraciones b { font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: 1.1rem; color: var(--accent); text-transform: uppercase; }
+@media (max-width: 500px) { .valoraciones { grid-template-columns: repeat(2, 1fr); } }
+
 footer { padding: 40px 16px; color: var(--muted); font-size: .85rem; }
 
 @media (max-width: 500px) {
