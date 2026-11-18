@@ -149,7 +149,8 @@ if ($("lista-partidos")) $("lista-partidos").innerHTML = [...D.partidos]
     }
     const eq = (n) => `<span class="eq ${n === D.equipo ? "nuestro" : ""}">${esc(n)}</span>`;
     const fecha = new Date(p.fecha).toLocaleDateString("es-ES", { weekday: "short", day: "numeric", month: "short" });
-    return `
+    // Con N equipos, la 1ª vuelta son N-1 jornadas: después va el separador
+    return `${i === D.clasificacion.length - 1 ? `<div class="vuelta">2ª vuelta</div>` : ""}
       <div class="partido ${cls}">
         ${eq(p.local)}
         <span class="marcador">${jugado ? p.gl + " – " + p.gv : "vs"}</span>

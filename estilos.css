@@ -195,3 +195,10 @@ footer { padding: 40px 16px; color: var(--muted); font-size: .85rem; }
   .tabs { gap: 16px; }
   .partido .eq { font-size: .9rem; }
 }
+
+/* Separador entre la 1ª y la 2ª vuelta */
+.vuelta {
+  display: flex; align-items: center; gap: 12px; margin: 24px 0 18px;
+  color: var(--accent); font-family: Anton, Impact, sans-serif; font-size: 1.2rem; text-transform: uppercase; letter-spacing: .06em;
+}
+.vuelta::before, .vuelta::after { content: ""; flex: 1; height: 3px; background: var(--accent); }
